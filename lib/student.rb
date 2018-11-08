@@ -42,5 +42,10 @@ class Student
   end
   
   def self.new_from_db(row)
+    sql = <<-SQL
+      SELECT *
+      FROM students
+    SQL
     
+    DB[:conn].execute(sql).map do |row|
 end
